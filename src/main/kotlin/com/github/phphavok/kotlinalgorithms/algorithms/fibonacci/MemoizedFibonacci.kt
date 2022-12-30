@@ -9,7 +9,7 @@ class MemoizedFibonacci : IFibonacci {
         val result = when (n) {
             0U -> BigInteger.valueOf(0)
             1U -> BigInteger.valueOf(1)
-            else -> fibonacci(n - 2U) + fibonacci(n - 1U)
+            else -> fibonacci(n - 1U) + fibonacci(n - 2U)
         }
         memo[n] = result
         result
