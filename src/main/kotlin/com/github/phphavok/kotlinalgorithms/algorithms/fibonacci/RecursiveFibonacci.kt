@@ -1,9 +1,11 @@
 package com.github.phphavok.kotlinalgorithms.algorithms.fibonacci
 
+import java.math.BigInteger
+
 class RecursiveFibonacci : IFibonacci {
-    override fun fibonacci(n: Long): Long = when (n) {
-        0L -> 0
-        1L -> 1
-        else -> fibonacci(n - 1) + fibonacci(n - 2)
+    override fun fibonacci(n: UInt): BigInteger = when (n) {
+        0U -> BigInteger.valueOf(0)
+        1U -> BigInteger.valueOf(1)
+        else -> fibonacci(n - 1U) + fibonacci(n - 2U)
     }
 }
