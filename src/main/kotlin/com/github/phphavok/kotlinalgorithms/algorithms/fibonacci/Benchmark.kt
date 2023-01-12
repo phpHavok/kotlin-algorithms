@@ -9,8 +9,9 @@ private const val MAX_TIME_MS = 1000
 
 fun main() {
     val implementations: Array<KClass<out IFibonacci>> = arrayOf(
-        RecursiveFibonacci::class,
-        MemoizedFibonacci::class
+//        RecursiveFibonacci::class,
+//        MemoizedFibonacci::class,
+        MemoizedDeepRecursiveFibonacci::class
     )
     println("Benchmarking ${implementations.size} fibonacci implementations.")
     println("Time limit is $MAX_TIME_MS ms per run.")
@@ -22,7 +23,7 @@ fun main() {
             val timeElapsed = measureTimeMillis {
                 result = instance.fibonacci(i)
             }
-            println("fib($i) = $result (calculated in $timeElapsed ms)")
+            println("fib($i) = (calculated in $timeElapsed ms)")
 
             if (timeElapsed > MAX_TIME_MS) break
         }
